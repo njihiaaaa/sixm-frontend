@@ -1,0 +1,219 @@
+/* 🎨 Root Variables for a High-End, Skims-Inspired Aesthetic */
+:root {
+  --primary: #2d2d2d; /* Sleek dark gray */
+  --secondary: #eae7dc; /* Soft beige */
+  --background-light: #fdfcfb; /* Creamy white */
+  --background-dark: #181818; /* Elegant black */
+  --text-light: #2a2a2a;
+  --text-dark: #f5f5f5;
+  --border-radius: 12px;
+  --transition: all 0.3s ease-in-out;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* 🌑 Dark Mode */
+[data-theme="dark"] {
+  --background-light: var(--background-dark);
+  --text-light: var(--text-dark);
+}
+
+/* ✅ Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-light);
+  color: var(--text-light);
+  font-family: var(--font-body);
+  transition: var(--transition);
+  letter-spacing: 0.6px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ✅ Main Content Wrapper to Push Footer Down */
+.main-content {
+  flex: 1;
+}
+
+/* ✅ Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background: var(--background-light);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.navbar:hover {
+  background: var(--secondary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--secondary);
+}
+
+/* ✅ Hero Section with Playfair Display Font */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  font-family: var(--font-heading);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✅ Product Container */
+.product-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 0;
+  flex: 1;
+}
+
+/* ✅ Product Filters & Search */
+.product-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-dropdown, .search-bar {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--primary);
+}
+
+/* ✅ Product List */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.product-item {
+  background: white;
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-in forwards;
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.product-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product-item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.product-item p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+/* ✅ Authentication Forms (Fixed Vertical Alignment + Fonts) */
+.auth-container {
+  max-width: 420px;
+  margin: auto;
+  padding: 35px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border-radius: var(--border-radius);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container h2 {
+  font-family: var(--font-heading);
+  margin-bottom: 20px;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--primary);
+  outline: none;
+  font-size: 16px;
+  background: var(--secondary);
+  color: var(--text-light);
+}
+
+.auth-container input::placeholder {
+  color: #7a7a7a;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+.auth-container button:hover {
+  background-color: var(--text-light);
+}
